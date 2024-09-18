@@ -72,7 +72,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toUpperCase().contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
@@ -93,11 +93,15 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        //System.out.println("ARE WE HERE?");
+
         //findByValue() TEST
         for (int i = 0; i < allJobs.size(); i++) {
             //System.out.println("FILLER");
             for (Map.Entry<String, String> field : allJobs.get(i).entrySet()) {
-                if (field.getValue().contains(value)) {
+                //System.out.println(field.getValue().toUpperCase());
+                //System.out.println(value.toUpperCase());
+                if (field.getValue().toUpperCase().contains(value.toUpperCase())) {
                     //System.out.println("FOUND");
                     jobs.add(allJobs.get(i));
                     break;
