@@ -93,27 +93,15 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        //System.out.println("ARE WE HERE?");
-
-        //findByValue() TEST
-        for (int i = 0; i < allJobs.size(); i++) {
-            //System.out.println("FILLER");
+        for (int i = 0; i < allJobs.size(); i++){
             for (Map.Entry<String, String> field : allJobs.get(i).entrySet()) {
-                //System.out.println(field.getValue().toUpperCase());
-                //System.out.println(value.toUpperCase());
                 if (field.getValue().toUpperCase().contains(value.toUpperCase())) {
-                    //System.out.println("FOUND");
                     jobs.add(allJobs.get(i));
                     break;
                 }
             }
         }
-
         return jobs;
-
-
-        // TODO - implement this method
-        //return null;
     }
 
     /**
